@@ -7,7 +7,7 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace SMAUG.Edmx
+namespace SMAUG.Models
 {
     using System;
     using System.Collections.Generic;

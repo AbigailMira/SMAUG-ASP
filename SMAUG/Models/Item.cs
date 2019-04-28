@@ -7,34 +7,39 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace SMAUG.Edmx
+namespace SMAUG.Models
 {
+    using SMAUG.Models;
     using System;
     using System.Collections.Generic;
-    
-    public partial class Person
+    using System.ComponentModel;
+
+    public partial class Item
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Person()
+        public Item()
         {
             this.Publication = new HashSet<Publication>();
+            this.Person = new HashSet<Person>();
             this.Arda = new HashSet<Arda>();
-            this.Item = new HashSet<Item>();
         }
     
-        public int Per_Id { get; set; }
-        public string Per_LastName { get; set; }
-        public string Per_FirstName { get; set; }
-        public Nullable<short> Per_Birth { get; set; }
-        public Nullable<short> Per_Death { get; set; }
-        public string Per_Job { get; set; }
-        public string Per_Company { get; set; }
+        public int Ite_Id { get; set; }
+        [DisplayName("Type")]
+        public string Ite_Type { get; set; }
+        [DisplayName("Name")]
+        public string Ite_Name { get; set; }
+        public string Ite_Collection { get; set; }
+        public string Ite_Edition { get; set; }
+        public string Ite_Editor { get; set; }
+        public string Ite_ISBN { get; set; }
+        public Nullable<short> Ite_ProdDate { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Publication> Publication { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Arda> Arda { get; set; }
+        public virtual ICollection<Person> Person { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Item> Item { get; set; }
+        public virtual ICollection<Arda> Arda { get; set; }
     }
 }

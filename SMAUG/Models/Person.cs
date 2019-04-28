@@ -7,33 +7,33 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace SMAUG.Edmx
+namespace SMAUG.Models
 {
     using System;
     using System.Collections.Generic;
     
-    public partial class Arda
+    public partial class Person
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Arda()
+        public Person()
         {
             this.Publication = new HashSet<Publication>();
-            this.Person = new HashSet<Person>();
+            this.Arda = new HashSet<Arda>();
             this.Item = new HashSet<Item>();
         }
     
-        public int Ard_Id { get; set; }
-        public string Ard_Name { get; set; }
-        public string Ard_Type { get; set; }
-        public string Ard_Race { get; set; }
-        public string Ard_People { get; set; }
-        public Nullable<int> Ard_FirstAppearance { get; set; }
-        public string Ard_Gender { get; set; }
+        public int Per_Id { get; set; }
+        public string Per_LastName { get; set; }
+        public string Per_FirstName { get; set; }
+        public Nullable<short> Per_Birth { get; set; }
+        public Nullable<short> Per_Death { get; set; }
+        public string Per_Job { get; set; }
+        public string Per_Company { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Publication> Publication { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Person> Person { get; set; }
+        public virtual ICollection<Arda> Arda { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Item> Item { get; set; }
     }

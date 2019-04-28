@@ -7,38 +7,34 @@
 // </auto-generated>
 //------------------------------------------------------------------------------
 
-namespace SMAUG.Edmx
+namespace SMAUG.Models
 {
     using System;
     using System.Collections.Generic;
-    using System.ComponentModel;
-
-    public partial class Item
+    
+    public partial class Arda
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
-        public Item()
+        public Arda()
         {
             this.Publication = new HashSet<Publication>();
             this.Person = new HashSet<Person>();
-            this.Arda = new HashSet<Arda>();
+            this.Item = new HashSet<Item>();
         }
     
-        public int Ite_Id { get; set; }
-        [DisplayName("Type")]
-        public string Ite_Type { get; set; }
-        [DisplayName("Name")]
-        public string Ite_Name { get; set; }
-        public string Ite_Collection { get; set; }
-        public string Ite_Edition { get; set; }
-        public string Ite_Editor { get; set; }
-        public string Ite_ISBN { get; set; }
-        public Nullable<short> Ite_ProdDate { get; set; }
+        public int Ard_Id { get; set; }
+        public string Ard_Name { get; set; }
+        public string Ard_Type { get; set; }
+        public string Ard_Race { get; set; }
+        public string Ard_People { get; set; }
+        public Nullable<int> Ard_FirstAppearance { get; set; }
+        public string Ard_Gender { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Publication> Publication { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Person> Person { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Arda> Arda { get; set; }
+        public virtual ICollection<Item> Item { get; set; }
     }
 }
