@@ -4,11 +4,11 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="a00da553adc44931b7854dbebb4b5fab" Name="Diagram1">
-        <EntityTypeShape EntityType="SMAUGModel.Arda" Width="1.5" PointX="0.75" PointY="5.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="SMAUGModel.Item" Width="1.5" PointX="3" PointY="5.5" IsExpanded="true" />
-        <EntityTypeShape EntityType="SMAUGModel.Person" Width="1.5" PointX="5.25" PointY="5.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="SMAUGModel.Publication" Width="1.5" PointX="7.5" PointY="5.375" IsExpanded="true" />
+      <Diagram DiagramId="118c4df7e73f45328afffbc762979fa2" Name="Diagram1">
+        <EntityTypeShape EntityType="SMAUGModel.Arda" Width="1.5" PointX="0.75" PointY="5.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMAUGModel.Item" Width="1.5" PointX="3" PointY="5.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMAUGModel.Person" Width="1.5" PointX="5.25" PointY="5.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="SMAUGModel.Publication" Width="1.5" PointX="7.5" PointY="5.5" IsExpanded="true" />
         <EntityTypeShape EntityType="SMAUGModel.sysdiagrams" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <AssociationConnector Association="SMAUGModel.FK_Publication_Person" ManuallyRouted="false" />
         <AssociationConnector Association="SMAUGModel.Adaptation" ManuallyRouted="false" />

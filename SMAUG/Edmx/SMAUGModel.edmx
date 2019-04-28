@@ -23,6 +23,7 @@
           <Property Name="Ard_Race" Type="nvarchar" MaxLength="250" />
           <Property Name="Ard_People" Type="nvarchar" MaxLength="250" />
           <Property Name="Ard_FirstAppearance" Type="int" />
+          <Property Name="Ard_Gender" Type="nvarchar" MaxLength="250" />
         </EntityType>
         <EntityType Name="Development">
           <Key>
@@ -95,6 +96,7 @@
           <Property Name="Per_Birth" Type="smallint" />
           <Property Name="Per_Death" Type="smallint" />
           <Property Name="Per_Job" Type="nvarchar" MaxLength="250" />
+          <Property Name="Per_Company" Type="nvarchar" MaxLength="250" />
         </EntityType>
         <EntityType Name="Publication">
           <Key>
@@ -106,6 +108,7 @@
           <Property Name="Pub_SeriesTitle" Type="nvarchar" MaxLength="250" />
           <Property Name="Pub_Volume" Type="int" />
           <Property Name="Pub_Author" Type="int" />
+          <Property Name="Pub_Type" Type="nvarchar" MaxLength="250" />
         </EntityType>
         <EntityType Name="Reference">
           <Key>
@@ -468,10 +471,9 @@
           <Property Name="Ard_Race" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
           <Property Name="Ard_People" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
           <Property Name="Ard_FirstAppearance" Type="Int32" />
+          <Property Name="Ard_Gender" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Publication" Relationship="Self.Development" FromRole="Arda" ToRole="Publication" />
-          <NavigationProperty Name="Publication1" Relationship="Self.Existence" FromRole="Arda" ToRole="Publication" />
           <NavigationProperty Name="Person" Relationship="Self.Interpretation" FromRole="Arda" ToRole="Person" />
-          <NavigationProperty Name="Person1" Relationship="Self.Invention" FromRole="Arda" ToRole="Person" />
           <NavigationProperty Name="Item" Relationship="Self.Reference" FromRole="Arda" ToRole="Item" />
         </EntityType>
         <EntityType Name="Item">
@@ -500,12 +502,10 @@
           <Property Name="Per_Birth" Type="Int16" />
           <Property Name="Per_Death" Type="Int16" />
           <Property Name="Per_Job" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Per_Company" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Publication" Relationship="Self.FK_Publication_Person" FromRole="Person" ToRole="Publication" />
-          <NavigationProperty Name="Publication1" Relationship="Self.Adaptation" FromRole="Person" ToRole="Publication" />
           <NavigationProperty Name="Arda" Relationship="Self.Interpretation" FromRole="Person" ToRole="Arda" />
-          <NavigationProperty Name="Arda1" Relationship="Self.Invention" FromRole="Person" ToRole="Arda" />
           <NavigationProperty Name="Item" Relationship="Self.Making" FromRole="Person" ToRole="Item" />
-          <NavigationProperty Name="Publication2" Relationship="Self.Subcreation" FromRole="Person" ToRole="Publication" />
         </EntityType>
         <EntityType Name="Publication">
           <Key>
@@ -517,12 +517,10 @@
           <Property Name="Pub_SeriesTitle" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
           <Property Name="Pub_Volume" Type="Int32" />
           <Property Name="Pub_Author" Type="Int32" />
+          <Property Name="Pub_Type" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
           <NavigationProperty Name="Person" Relationship="Self.FK_Publication_Person" FromRole="Publication" ToRole="Person" />
-          <NavigationProperty Name="Person1" Relationship="Self.Adaptation" FromRole="Publication" ToRole="Person" />
           <NavigationProperty Name="Arda" Relationship="Self.Development" FromRole="Publication" ToRole="Arda" />
-          <NavigationProperty Name="Arda1" Relationship="Self.Existence" FromRole="Publication" ToRole="Arda" />
           <NavigationProperty Name="Item" Relationship="Self.Inspiration" FromRole="Publication" ToRole="Item" />
-          <NavigationProperty Name="Person2" Relationship="Self.Subcreation" FromRole="Publication" ToRole="Person" />
         </EntityType>
         <EntityType Name="sysdiagrams">
           <Key>
@@ -644,6 +642,7 @@
                 <ScalarProperty Name="Ard_Race" ColumnName="Ard_Race" />
                 <ScalarProperty Name="Ard_People" ColumnName="Ard_People" />
                 <ScalarProperty Name="Ard_FirstAppearance" ColumnName="Ard_FirstAppearance" />
+                <ScalarProperty Name="Ard_Gender" ColumnName="Ard_Gender" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -670,6 +669,7 @@
                 <ScalarProperty Name="Per_Birth" ColumnName="Per_Birth" />
                 <ScalarProperty Name="Per_Death" ColumnName="Per_Death" />
                 <ScalarProperty Name="Per_Job" ColumnName="Per_Job" />
+                <ScalarProperty Name="Per_Company" ColumnName="Per_Company" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -682,6 +682,7 @@
                 <ScalarProperty Name="Pub_SeriesTitle" ColumnName="Pub_SeriesTitle" />
                 <ScalarProperty Name="Pub_Volume" ColumnName="Pub_Volume" />
                 <ScalarProperty Name="Pub_Author" ColumnName="Pub_Author" />
+                <ScalarProperty Name="Pub_Type" ColumnName="Pub_Type" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

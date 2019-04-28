@@ -18,11 +18,8 @@ namespace SMAUG.Edmx
         public Person()
         {
             this.Publication = new HashSet<Publication>();
-            this.Publication1 = new HashSet<Publication>();
             this.Arda = new HashSet<Arda>();
-            this.Arda1 = new HashSet<Arda>();
             this.Item = new HashSet<Item>();
-            this.Publication2 = new HashSet<Publication>();
         }
     
         public int Per_Id { get; set; }
@@ -31,18 +28,13 @@ namespace SMAUG.Edmx
         public Nullable<short> Per_Birth { get; set; }
         public Nullable<short> Per_Death { get; set; }
         public string Per_Job { get; set; }
+        public string Per_Company { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Publication> Publication { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Publication> Publication1 { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Arda> Arda { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Arda> Arda1 { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Item> Item { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Publication> Publication2 { get; set; }
     }
 }

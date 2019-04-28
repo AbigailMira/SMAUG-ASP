@@ -1,19 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
-namespace SMAUG.Models
+namespace SMAUG.Edmx
 {
     public class ItemModel
     {
         public int Ite_Id { get; set; }
-        [Display(Name = "Type")]
+        [DisplayName("Type")]
         public string Ite_Type{ get; set; }
-        [Display(Name = "Name")]
+        [DisplayName("Name")]
         public string Ite_Name { get; set; }
-        [Display(Name = "Made in")]
+        [DisplayName("Made in")]
         public int Ite_ProdDate { get; set; }
     }
 }

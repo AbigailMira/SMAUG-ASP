@@ -11,7 +11,8 @@ namespace SMAUG.Edmx
 {
     using System;
     using System.Collections.Generic;
-    
+    using System.ComponentModel;
+
     public partial class Item
     {
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
@@ -23,7 +24,9 @@ namespace SMAUG.Edmx
         }
     
         public int Ite_Id { get; set; }
+        [DisplayName("Type")]
         public string Ite_Type { get; set; }
+        [DisplayName("Name")]
         public string Ite_Name { get; set; }
         public string Ite_Collection { get; set; }
         public string Ite_Edition { get; set; }

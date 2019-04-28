@@ -204,21 +204,6 @@
     <Compile Include="Edmx\Publication.cs">
       <DependentUpon>SMAUGModel.tt</DependentUpon>
     </Compile>
-    <Compile Include="Edmx\SMAUG.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>SMAUG.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Edmx\SMAUG.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>SMAUG.tt</DependentUpon>
-    </Compile>
-    <Compile Include="Edmx\SMAUG.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>SMAUG.edmx</DependentUpon>
-    </Compile>
     <Compile Include="Edmx\SMAUGModel.Context.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -229,13 +214,21 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>SMAUGModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Edmx\SMAUGModel.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>SMAUGModel.edmx</DependentUpon>
+    </Compile>
     <Compile Include="Edmx\sysdiagrams.cs">
       <DependentUpon>SMAUGModel.tt</DependentUpon>
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
+    <Compile Include="Models\ArdaModel.cs" />
     <Compile Include="Models\ItemModel.cs" />
+    <Compile Include="Models\PersonModel.cs" />
+    <Compile Include="Models\PublicationModel.cs" />
     <Compile Include="Models\ViewModels\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ViewModels\ItemViewModel.cs" />
@@ -252,25 +245,15 @@
     <Content Include="Content\bootstrap.css" />
     <Content Include="Content\bootstrap.min.css" />
     <Content Include="Content\img\bgr-image.svg" />
-    <Content Include="Edmx\SMAUG.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>SMAUG.edmx</DependentUpon>
-      <LastGenOutput>SMAUG.Context.cs</LastGenOutput>
-    </Content>
-    <Content Include="Edmx\SMAUG.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>SMAUG.edmx</DependentUpon>
-      <LastGenOutput>SMAUG.cs</LastGenOutput>
-    </Content>
     <Content Include="Edmx\SMAUGModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SMAUGModel.edmx</DependentUpon>
       <LastGenOutput>SMAUGModel.Context.cs</LastGenOutput>
-      <DependentUpon>SMAUG.edmx</DependentUpon>
     </Content>
     <Content Include="Edmx\SMAUGModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>SMAUGModel.edmx</DependentUpon>
       <LastGenOutput>SMAUGModel.cs</LastGenOutput>
-      <DependentUpon>SMAUG.edmx</DependentUpon>
     </Content>
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
@@ -297,12 +280,12 @@
     <Content Include="Scripts\esm\popper.js.map" />
     <Content Include="Scripts\esm\popper-utils.min.js.map" />
     <Content Include="Scripts\esm\popper-utils.js.map" />
-    <EntityDeploy Include="Edmx\SMAUG.edmx">
+    <EntityDeploy Include="Edmx\SMAUGModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>SMAUG.Designer.cs</LastGenOutput>
+      <LastGenOutput>SMAUGModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <Content Include="Edmx\SMAUG.edmx.diagram">
-      <DependentUpon>SMAUG.edmx</DependentUpon>
+    <Content Include="Edmx\SMAUGModel.edmx.diagram">
+      <DependentUpon>SMAUGModel.edmx</DependentUpon>
     </Content>
     <None Include="Scripts\jquery-3.3.1.intellisense.js" />
     <Content Include="Scripts\jquery-3.3.1.js" />
@@ -323,7 +306,9 @@
     <Content Include="Scripts\umd\popper-utils.min.js" />
     <Content Include="Scripts\umd\popper.js" />
     <Content Include="Scripts\umd\popper.min.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>

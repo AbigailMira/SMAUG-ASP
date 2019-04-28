@@ -18,9 +18,7 @@ namespace SMAUG.Edmx
         public Arda()
         {
             this.Publication = new HashSet<Publication>();
-            this.Publication1 = new HashSet<Publication>();
             this.Person = new HashSet<Person>();
-            this.Person1 = new HashSet<Person>();
             this.Item = new HashSet<Item>();
         }
     
@@ -30,15 +28,12 @@ namespace SMAUG.Edmx
         public string Ard_Race { get; set; }
         public string Ard_People { get; set; }
         public Nullable<int> Ard_FirstAppearance { get; set; }
+        public string Ard_Gender { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Publication> Publication { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Publication> Publication1 { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Person> Person { get; set; }
-        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Person> Person1 { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Item> Item { get; set; }
     }

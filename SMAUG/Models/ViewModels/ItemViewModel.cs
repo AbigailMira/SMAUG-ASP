@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 using System.Linq;
 using System.Web;
 
-namespace SMAUG.Models
+namespace SMAUG.Edmx
 {
     public class ItemViewModel
     {
