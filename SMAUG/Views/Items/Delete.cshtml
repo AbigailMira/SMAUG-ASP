@@ -1,0 +1,81 @@
+﻿@model SMAUG.Edmx.Item
+
+@{
+    ViewBag.Title = "Delete";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Delete</h2>
+
+<h3>Are you sure you want to delete this?</h3>
+<div>
+    <h4>Item</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Ite_Type)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ite_Type)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Ite_Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ite_Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Ite_Collection)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ite_Collection)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Ite_Edition)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ite_Edition)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Ite_Editor)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ite_Editor)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Ite_ISBN)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ite_ISBN)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Ite_ProdDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ite_ProdDate)
+        </dd>
+
+    </dl>
+
+    @using (Html.BeginForm()) {
+        @Html.AntiForgeryToken()
+
+        <div class="form-actions no-color">
+            <input type="submit" value="Delete" class="btn btn-default" /> |
+            @Html.ActionLink("Back to List", "Index")
+        </div>
+    }
+</div>

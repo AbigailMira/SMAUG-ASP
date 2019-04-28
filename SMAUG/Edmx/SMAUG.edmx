@@ -1,0 +1,794 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+  <!-- EF Runtime content -->
+  <edmx:Runtime>
+    <!-- SSDL content -->
+    <edmx:StorageModels>
+      <Schema Namespace="SMAUGModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+        <EntityType Name="Adaptation">
+          <Key>
+            <PropertyRef Name="Ada_Per_Id" />
+            <PropertyRef Name="Ada_Pub_Id" />
+          </Key>
+          <Property Name="Ada_Per_Id" Type="int" Nullable="false" />
+          <Property Name="Ada_Pub_Id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Arda">
+          <Key>
+            <PropertyRef Name="Ard_Id" />
+          </Key>
+          <Property Name="Ard_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Ard_Name" Type="nvarchar" MaxLength="250" />
+          <Property Name="Ard_Type" Type="nvarchar" MaxLength="250" />
+          <Property Name="Ard_Race" Type="nvarchar" MaxLength="250" />
+          <Property Name="Ard_People" Type="nvarchar" MaxLength="250" />
+          <Property Name="Ard_FirstAppearance" Type="int" />
+        </EntityType>
+        <EntityType Name="Development">
+          <Key>
+            <PropertyRef Name="Dev_Pub_Id" />
+            <PropertyRef Name="Dev_Ard_Id" />
+          </Key>
+          <Property Name="Dev_Pub_Id" Type="int" Nullable="false" />
+          <Property Name="Dev_Ard_Id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Existence">
+          <Key>
+            <PropertyRef Name="Exi_Pub_Id" />
+            <PropertyRef Name="Exi_Ard_Id" />
+          </Key>
+          <Property Name="Exi_Pub_Id" Type="int" Nullable="false" />
+          <Property Name="Exi_Ard_Id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Inspiration">
+          <Key>
+            <PropertyRef Name="Ins_Pub_Id" />
+            <PropertyRef Name="Ins_Ite_Id" />
+          </Key>
+          <Property Name="Ins_Pub_Id" Type="int" Nullable="false" />
+          <Property Name="Ins_Ite_Id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Interpretation">
+          <Key>
+            <PropertyRef Name="Int_Per_Id" />
+            <PropertyRef Name="Int_Ard_Id" />
+          </Key>
+          <Property Name="Int_Per_Id" Type="int" Nullable="false" />
+          <Property Name="Int_Ard_Id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Invention">
+          <Key>
+            <PropertyRef Name="Inv_Per_Id" />
+            <PropertyRef Name="Inv_Ard_Id" />
+          </Key>
+          <Property Name="Inv_Per_Id" Type="int" Nullable="false" />
+          <Property Name="Inv_Ard_Id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Item">
+          <Key>
+            <PropertyRef Name="Ite_Id" />
+          </Key>
+          <Property Name="Ite_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Ite_Type" Type="nvarchar" MaxLength="250" />
+          <Property Name="Ite_Name" Type="nvarchar" MaxLength="250" />
+          <Property Name="Ite_Collection" Type="nvarchar" MaxLength="250" />
+          <Property Name="Ite_Edition" Type="nvarchar" MaxLength="250" />
+          <Property Name="Ite_Editor" Type="nvarchar" MaxLength="250" />
+          <Property Name="Ite_ISBN" Type="nvarchar" MaxLength="250" />
+          <Property Name="Ite_ProdDate" Type="smallint" />
+        </EntityType>
+        <EntityType Name="Making">
+          <Key>
+            <PropertyRef Name="Mak_Per_Id" />
+            <PropertyRef Name="Mak_Ite_Id" />
+          </Key>
+          <Property Name="Mak_Per_Id" Type="int" Nullable="false" />
+          <Property Name="Mak_Ite_Id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Person">
+          <Key>
+            <PropertyRef Name="Per_Id" />
+          </Key>
+          <Property Name="Per_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Per_LastName" Type="nvarchar" MaxLength="250" />
+          <Property Name="Per_FirstName" Type="nvarchar" MaxLength="250" />
+          <Property Name="Per_Birth" Type="smallint" />
+          <Property Name="Per_Death" Type="smallint" />
+          <Property Name="Per_Job" Type="nvarchar" MaxLength="250" />
+        </EntityType>
+        <EntityType Name="Publication">
+          <Key>
+            <PropertyRef Name="Pub_Id" />
+          </Key>
+          <Property Name="Pub_Id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="Pub_Title" Type="nvarchar" MaxLength="250" />
+          <Property Name="Pub_Date" Type="smallint" />
+          <Property Name="Pub_SeriesTitle" Type="nvarchar" MaxLength="250" />
+          <Property Name="Pub_Volume" Type="int" />
+          <Property Name="Pub_Author" Type="int" />
+        </EntityType>
+        <EntityType Name="Reference">
+          <Key>
+            <PropertyRef Name="Ref_Ite_Id" />
+            <PropertyRef Name="Ref_Ard_Id" />
+          </Key>
+          <Property Name="Ref_Ite_Id" Type="int" Nullable="false" />
+          <Property Name="Ref_Ard_Id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="Subcreation">
+          <Key>
+            <PropertyRef Name="Sub_Per_Id" />
+            <PropertyRef Name="Sub_Pub_Id" />
+          </Key>
+          <Property Name="Sub_Per_Id" Type="int" Nullable="false" />
+          <Property Name="Sub_Pub_Id" Type="int" Nullable="false" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+          <Property Name="principal_id" Type="int" Nullable="false" />
+          <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+          <Property Name="version" Type="int" />
+          <Property Name="definition" Type="varbinary(max)" />
+        </EntityType>
+        <Association Name="FK_Adaptation_Person">
+          <End Role="Person" Type="Self.Person" Multiplicity="1" />
+          <End Role="Adaptation" Type="Self.Adaptation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Person">
+              <PropertyRef Name="Per_Id" />
+            </Principal>
+            <Dependent Role="Adaptation">
+              <PropertyRef Name="Ada_Per_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Adaptation_Publication">
+          <End Role="Publication" Type="Self.Publication" Multiplicity="1" />
+          <End Role="Adaptation" Type="Self.Adaptation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Publication">
+              <PropertyRef Name="Pub_Id" />
+            </Principal>
+            <Dependent Role="Adaptation">
+              <PropertyRef Name="Ada_Pub_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Development_Arda">
+          <End Role="Arda" Type="Self.Arda" Multiplicity="1" />
+          <End Role="Development" Type="Self.Development" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Arda">
+              <PropertyRef Name="Ard_Id" />
+            </Principal>
+            <Dependent Role="Development">
+              <PropertyRef Name="Dev_Ard_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Development_Publication">
+          <End Role="Publication" Type="Self.Publication" Multiplicity="1" />
+          <End Role="Development" Type="Self.Development" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Publication">
+              <PropertyRef Name="Pub_Id" />
+            </Principal>
+            <Dependent Role="Development">
+              <PropertyRef Name="Dev_Pub_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Existence_Arda">
+          <End Role="Arda" Type="Self.Arda" Multiplicity="1" />
+          <End Role="Existence" Type="Self.Existence" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Arda">
+              <PropertyRef Name="Ard_Id" />
+            </Principal>
+            <Dependent Role="Existence">
+              <PropertyRef Name="Exi_Ard_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Existence_Publication">
+          <End Role="Publication" Type="Self.Publication" Multiplicity="1" />
+          <End Role="Existence" Type="Self.Existence" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Publication">
+              <PropertyRef Name="Pub_Id" />
+            </Principal>
+            <Dependent Role="Existence">
+              <PropertyRef Name="Exi_Pub_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Inspiration_Item">
+          <End Role="Item" Type="Self.Item" Multiplicity="1" />
+          <End Role="Inspiration" Type="Self.Inspiration" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Item">
+              <PropertyRef Name="Ite_Id" />
+            </Principal>
+            <Dependent Role="Inspiration">
+              <PropertyRef Name="Ins_Ite_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Inspiration_Publication">
+          <End Role="Publication" Type="Self.Publication" Multiplicity="1" />
+          <End Role="Inspiration" Type="Self.Inspiration" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Publication">
+              <PropertyRef Name="Pub_Id" />
+            </Principal>
+            <Dependent Role="Inspiration">
+              <PropertyRef Name="Ins_Pub_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Interpretation_Arda">
+          <End Role="Arda" Type="Self.Arda" Multiplicity="1" />
+          <End Role="Interpretation" Type="Self.Interpretation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Arda">
+              <PropertyRef Name="Ard_Id" />
+            </Principal>
+            <Dependent Role="Interpretation">
+              <PropertyRef Name="Int_Ard_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Interpretation_Person">
+          <End Role="Person" Type="Self.Person" Multiplicity="1" />
+          <End Role="Interpretation" Type="Self.Interpretation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Person">
+              <PropertyRef Name="Per_Id" />
+            </Principal>
+            <Dependent Role="Interpretation">
+              <PropertyRef Name="Int_Per_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Invention_Arda">
+          <End Role="Arda" Type="Self.Arda" Multiplicity="1" />
+          <End Role="Invention" Type="Self.Invention" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Arda">
+              <PropertyRef Name="Ard_Id" />
+            </Principal>
+            <Dependent Role="Invention">
+              <PropertyRef Name="Inv_Ard_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Invention_Person">
+          <End Role="Person" Type="Self.Person" Multiplicity="1" />
+          <End Role="Invention" Type="Self.Invention" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Person">
+              <PropertyRef Name="Per_Id" />
+            </Principal>
+            <Dependent Role="Invention">
+              <PropertyRef Name="Inv_Per_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Making_Item">
+          <End Role="Item" Type="Self.Item" Multiplicity="1" />
+          <End Role="Making" Type="Self.Making" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Item">
+              <PropertyRef Name="Ite_Id" />
+            </Principal>
+            <Dependent Role="Making">
+              <PropertyRef Name="Mak_Ite_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Making_Person">
+          <End Role="Person" Type="Self.Person" Multiplicity="1" />
+          <End Role="Making" Type="Self.Making" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Person">
+              <PropertyRef Name="Per_Id" />
+            </Principal>
+            <Dependent Role="Making">
+              <PropertyRef Name="Mak_Per_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Publication_Person">
+          <End Role="Person" Type="Self.Person" Multiplicity="0..1" />
+          <End Role="Publication" Type="Self.Publication" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Person">
+              <PropertyRef Name="Per_Id" />
+            </Principal>
+            <Dependent Role="Publication">
+              <PropertyRef Name="Pub_Author" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Reference_Arda">
+          <End Role="Arda" Type="Self.Arda" Multiplicity="1" />
+          <End Role="Reference" Type="Self.Reference" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Arda">
+              <PropertyRef Name="Ard_Id" />
+            </Principal>
+            <Dependent Role="Reference">
+              <PropertyRef Name="Ref_Ard_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Reference_Item">
+          <End Role="Item" Type="Self.Item" Multiplicity="1" />
+          <End Role="Reference" Type="Self.Reference" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Item">
+              <PropertyRef Name="Ite_Id" />
+            </Principal>
+            <Dependent Role="Reference">
+              <PropertyRef Name="Ref_Ite_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Subcreation_Person">
+          <End Role="Person" Type="Self.Person" Multiplicity="1" />
+          <End Role="Subcreation" Type="Self.Subcreation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Person">
+              <PropertyRef Name="Per_Id" />
+            </Principal>
+            <Dependent Role="Subcreation">
+              <PropertyRef Name="Sub_Per_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="FK_Subcreation_Publication">
+          <End Role="Publication" Type="Self.Publication" Multiplicity="1" />
+          <End Role="Subcreation" Type="Self.Subcreation" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Publication">
+              <PropertyRef Name="Pub_Id" />
+            </Principal>
+            <Dependent Role="Subcreation">
+              <PropertyRef Name="Sub_Pub_Id" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <EntityContainer Name="SMAUGModelStoreContainer">
+          <EntitySet Name="Adaptation" EntityType="Self.Adaptation" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Arda" EntityType="Self.Arda" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Development" EntityType="Self.Development" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Existence" EntityType="Self.Existence" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Inspiration" EntityType="Self.Inspiration" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Interpretation" EntityType="Self.Interpretation" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Invention" EntityType="Self.Invention" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Item" EntityType="Self.Item" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Making" EntityType="Self.Making" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Person" EntityType="Self.Person" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Publication" EntityType="Self.Publication" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Reference" EntityType="Self.Reference" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="Subcreation" EntityType="Self.Subcreation" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+          <AssociationSet Name="FK_Adaptation_Person" Association="Self.FK_Adaptation_Person">
+            <End Role="Person" EntitySet="Person" />
+            <End Role="Adaptation" EntitySet="Adaptation" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Adaptation_Publication" Association="Self.FK_Adaptation_Publication">
+            <End Role="Publication" EntitySet="Publication" />
+            <End Role="Adaptation" EntitySet="Adaptation" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Development_Arda" Association="Self.FK_Development_Arda">
+            <End Role="Arda" EntitySet="Arda" />
+            <End Role="Development" EntitySet="Development" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Development_Publication" Association="Self.FK_Development_Publication">
+            <End Role="Publication" EntitySet="Publication" />
+            <End Role="Development" EntitySet="Development" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Existence_Arda" Association="Self.FK_Existence_Arda">
+            <End Role="Arda" EntitySet="Arda" />
+            <End Role="Existence" EntitySet="Existence" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Existence_Publication" Association="Self.FK_Existence_Publication">
+            <End Role="Publication" EntitySet="Publication" />
+            <End Role="Existence" EntitySet="Existence" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Inspiration_Item" Association="Self.FK_Inspiration_Item">
+            <End Role="Item" EntitySet="Item" />
+            <End Role="Inspiration" EntitySet="Inspiration" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Inspiration_Publication" Association="Self.FK_Inspiration_Publication">
+            <End Role="Publication" EntitySet="Publication" />
+            <End Role="Inspiration" EntitySet="Inspiration" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Interpretation_Arda" Association="Self.FK_Interpretation_Arda">
+            <End Role="Arda" EntitySet="Arda" />
+            <End Role="Interpretation" EntitySet="Interpretation" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Interpretation_Person" Association="Self.FK_Interpretation_Person">
+            <End Role="Person" EntitySet="Person" />
+            <End Role="Interpretation" EntitySet="Interpretation" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Invention_Arda" Association="Self.FK_Invention_Arda">
+            <End Role="Arda" EntitySet="Arda" />
+            <End Role="Invention" EntitySet="Invention" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Invention_Person" Association="Self.FK_Invention_Person">
+            <End Role="Person" EntitySet="Person" />
+            <End Role="Invention" EntitySet="Invention" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Making_Item" Association="Self.FK_Making_Item">
+            <End Role="Item" EntitySet="Item" />
+            <End Role="Making" EntitySet="Making" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Making_Person" Association="Self.FK_Making_Person">
+            <End Role="Person" EntitySet="Person" />
+            <End Role="Making" EntitySet="Making" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Publication_Person" Association="Self.FK_Publication_Person">
+            <End Role="Person" EntitySet="Person" />
+            <End Role="Publication" EntitySet="Publication" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Reference_Arda" Association="Self.FK_Reference_Arda">
+            <End Role="Arda" EntitySet="Arda" />
+            <End Role="Reference" EntitySet="Reference" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Reference_Item" Association="Self.FK_Reference_Item">
+            <End Role="Item" EntitySet="Item" />
+            <End Role="Reference" EntitySet="Reference" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Subcreation_Person" Association="Self.FK_Subcreation_Person">
+            <End Role="Person" EntitySet="Person" />
+            <End Role="Subcreation" EntitySet="Subcreation" />
+          </AssociationSet>
+          <AssociationSet Name="FK_Subcreation_Publication" Association="Self.FK_Subcreation_Publication">
+            <End Role="Publication" EntitySet="Publication" />
+            <End Role="Subcreation" EntitySet="Subcreation" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:StorageModels>
+    <!-- CSDL content -->
+    <edmx:ConceptualModels>
+      <Schema Namespace="SMAUGModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+        <EntityType Name="Arda">
+          <Key>
+            <PropertyRef Name="Ard_Id" />
+          </Key>
+          <Property Name="Ard_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Ard_Name" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Ard_Type" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Ard_Race" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Ard_People" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Ard_FirstAppearance" Type="Int32" />
+          <NavigationProperty Name="Publication" Relationship="Self.Development" FromRole="Arda" ToRole="Publication" />
+          <NavigationProperty Name="Publication1" Relationship="Self.Existence" FromRole="Arda" ToRole="Publication" />
+          <NavigationProperty Name="Person" Relationship="Self.Interpretation" FromRole="Arda" ToRole="Person" />
+          <NavigationProperty Name="Person1" Relationship="Self.Invention" FromRole="Arda" ToRole="Person" />
+          <NavigationProperty Name="Item" Relationship="Self.Reference" FromRole="Arda" ToRole="Item" />
+        </EntityType>
+        <EntityType Name="Item">
+          <Key>
+            <PropertyRef Name="Ite_Id" />
+          </Key>
+          <Property Name="Ite_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Ite_Type" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Ite_Name" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Ite_Collection" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Ite_Edition" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Ite_Editor" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Ite_ISBN" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Ite_ProdDate" Type="Int16" />
+          <NavigationProperty Name="Publication" Relationship="Self.Inspiration" FromRole="Item" ToRole="Publication" />
+          <NavigationProperty Name="Person" Relationship="Self.Making" FromRole="Item" ToRole="Person" />
+          <NavigationProperty Name="Arda" Relationship="Self.Reference" FromRole="Item" ToRole="Arda" />
+        </EntityType>
+        <EntityType Name="Person">
+          <Key>
+            <PropertyRef Name="Per_Id" />
+          </Key>
+          <Property Name="Per_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Per_LastName" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Per_FirstName" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Per_Birth" Type="Int16" />
+          <Property Name="Per_Death" Type="Int16" />
+          <Property Name="Per_Job" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <NavigationProperty Name="Publication" Relationship="Self.FK_Publication_Person" FromRole="Person" ToRole="Publication" />
+          <NavigationProperty Name="Publication1" Relationship="Self.Adaptation" FromRole="Person" ToRole="Publication" />
+          <NavigationProperty Name="Arda" Relationship="Self.Interpretation" FromRole="Person" ToRole="Arda" />
+          <NavigationProperty Name="Arda1" Relationship="Self.Invention" FromRole="Person" ToRole="Arda" />
+          <NavigationProperty Name="Item" Relationship="Self.Making" FromRole="Person" ToRole="Item" />
+          <NavigationProperty Name="Publication2" Relationship="Self.Subcreation" FromRole="Person" ToRole="Publication" />
+        </EntityType>
+        <EntityType Name="Publication">
+          <Key>
+            <PropertyRef Name="Pub_Id" />
+          </Key>
+          <Property Name="Pub_Id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="Pub_Title" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Pub_Date" Type="Int16" />
+          <Property Name="Pub_SeriesTitle" Type="String" MaxLength="250" FixedLength="false" Unicode="true" />
+          <Property Name="Pub_Volume" Type="Int32" />
+          <Property Name="Pub_Author" Type="Int32" />
+          <NavigationProperty Name="Person" Relationship="Self.FK_Publication_Person" FromRole="Publication" ToRole="Person" />
+          <NavigationProperty Name="Person1" Relationship="Self.Adaptation" FromRole="Publication" ToRole="Person" />
+          <NavigationProperty Name="Arda" Relationship="Self.Development" FromRole="Publication" ToRole="Arda" />
+          <NavigationProperty Name="Arda1" Relationship="Self.Existence" FromRole="Publication" ToRole="Arda" />
+          <NavigationProperty Name="Item" Relationship="Self.Inspiration" FromRole="Publication" ToRole="Item" />
+          <NavigationProperty Name="Person2" Relationship="Self.Subcreation" FromRole="Publication" ToRole="Person" />
+        </EntityType>
+        <EntityType Name="sysdiagrams">
+          <Key>
+            <PropertyRef Name="diagram_id" />
+          </Key>
+          <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+          <Property Name="principal_id" Type="Int32" Nullable="false" />
+          <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+          <Property Name="version" Type="Int32" />
+          <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+        </EntityType>
+        <Association Name="FK_Publication_Person">
+          <End Role="Person" Type="Self.Person" Multiplicity="0..1" />
+          <End Role="Publication" Type="Self.Publication" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Person">
+              <PropertyRef Name="Per_Id" />
+            </Principal>
+            <Dependent Role="Publication">
+              <PropertyRef Name="Pub_Author" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
+        <Association Name="Adaptation">
+          <End Role="Person" Type="Self.Person" Multiplicity="*" />
+          <End Role="Publication" Type="Self.Publication" Multiplicity="*" />
+        </Association>
+        <Association Name="Development">
+          <End Role="Arda" Type="Self.Arda" Multiplicity="*" />
+          <End Role="Publication" Type="Self.Publication" Multiplicity="*" />
+        </Association>
+        <Association Name="Existence">
+          <End Role="Arda" Type="Self.Arda" Multiplicity="*" />
+          <End Role="Publication" Type="Self.Publication" Multiplicity="*" />
+        </Association>
+        <Association Name="Inspiration">
+          <End Role="Item" Type="Self.Item" Multiplicity="*" />
+          <End Role="Publication" Type="Self.Publication" Multiplicity="*" />
+        </Association>
+        <Association Name="Interpretation">
+          <End Role="Arda" Type="Self.Arda" Multiplicity="*" />
+          <End Role="Person" Type="Self.Person" Multiplicity="*" />
+        </Association>
+        <Association Name="Invention">
+          <End Role="Arda" Type="Self.Arda" Multiplicity="*" />
+          <End Role="Person" Type="Self.Person" Multiplicity="*" />
+        </Association>
+        <Association Name="Making">
+          <End Role="Item" Type="Self.Item" Multiplicity="*" />
+          <End Role="Person" Type="Self.Person" Multiplicity="*" />
+        </Association>
+        <Association Name="Reference">
+          <End Role="Arda" Type="Self.Arda" Multiplicity="*" />
+          <End Role="Item" Type="Self.Item" Multiplicity="*" />
+        </Association>
+        <Association Name="Subcreation">
+          <End Role="Person" Type="Self.Person" Multiplicity="*" />
+          <End Role="Publication" Type="Self.Publication" Multiplicity="*" />
+        </Association>
+        <EntityContainer Name="SMAUGEntities" annotation:LazyLoadingEnabled="true">
+          <EntitySet Name="Arda" EntityType="Self.Arda" />
+          <EntitySet Name="Item" EntityType="Self.Item" />
+          <EntitySet Name="Person" EntityType="Self.Person" />
+          <EntitySet Name="Publication" EntityType="Self.Publication" />
+          <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+          <AssociationSet Name="FK_Publication_Person" Association="Self.FK_Publication_Person">
+            <End Role="Person" EntitySet="Person" />
+            <End Role="Publication" EntitySet="Publication" />
+          </AssociationSet>
+          <AssociationSet Name="Adaptation" Association="Self.Adaptation">
+            <End Role="Person" EntitySet="Person" />
+            <End Role="Publication" EntitySet="Publication" />
+          </AssociationSet>
+          <AssociationSet Name="Development" Association="Self.Development">
+            <End Role="Arda" EntitySet="Arda" />
+            <End Role="Publication" EntitySet="Publication" />
+          </AssociationSet>
+          <AssociationSet Name="Existence" Association="Self.Existence">
+            <End Role="Arda" EntitySet="Arda" />
+            <End Role="Publication" EntitySet="Publication" />
+          </AssociationSet>
+          <AssociationSet Name="Inspiration" Association="Self.Inspiration">
+            <End Role="Item" EntitySet="Item" />
+            <End Role="Publication" EntitySet="Publication" />
+          </AssociationSet>
+          <AssociationSet Name="Interpretation" Association="Self.Interpretation">
+            <End Role="Arda" EntitySet="Arda" />
+            <End Role="Person" EntitySet="Person" />
+          </AssociationSet>
+          <AssociationSet Name="Invention" Association="Self.Invention">
+            <End Role="Arda" EntitySet="Arda" />
+            <End Role="Person" EntitySet="Person" />
+          </AssociationSet>
+          <AssociationSet Name="Making" Association="Self.Making">
+            <End Role="Item" EntitySet="Item" />
+            <End Role="Person" EntitySet="Person" />
+          </AssociationSet>
+          <AssociationSet Name="Reference" Association="Self.Reference">
+            <End Role="Arda" EntitySet="Arda" />
+            <End Role="Item" EntitySet="Item" />
+          </AssociationSet>
+          <AssociationSet Name="Subcreation" Association="Self.Subcreation">
+            <End Role="Person" EntitySet="Person" />
+            <End Role="Publication" EntitySet="Publication" />
+          </AssociationSet>
+        </EntityContainer>
+      </Schema>
+    </edmx:ConceptualModels>
+    <!-- C-S mapping content -->
+    <edmx:Mappings>
+      <Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+        <EntityContainerMapping StorageEntityContainer="SMAUGModelStoreContainer" CdmEntityContainer="SMAUGEntities">
+          <EntitySetMapping Name="Arda">
+            <EntityTypeMapping TypeName="SMAUGModel.Arda">
+              <MappingFragment StoreEntitySet="Arda">
+                <ScalarProperty Name="Ard_Id" ColumnName="Ard_Id" />
+                <ScalarProperty Name="Ard_Name" ColumnName="Ard_Name" />
+                <ScalarProperty Name="Ard_Type" ColumnName="Ard_Type" />
+                <ScalarProperty Name="Ard_Race" ColumnName="Ard_Race" />
+                <ScalarProperty Name="Ard_People" ColumnName="Ard_People" />
+                <ScalarProperty Name="Ard_FirstAppearance" ColumnName="Ard_FirstAppearance" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Item">
+            <EntityTypeMapping TypeName="SMAUGModel.Item">
+              <MappingFragment StoreEntitySet="Item">
+                <ScalarProperty Name="Ite_Id" ColumnName="Ite_Id" />
+                <ScalarProperty Name="Ite_Type" ColumnName="Ite_Type" />
+                <ScalarProperty Name="Ite_Name" ColumnName="Ite_Name" />
+                <ScalarProperty Name="Ite_Collection" ColumnName="Ite_Collection" />
+                <ScalarProperty Name="Ite_Edition" ColumnName="Ite_Edition" />
+                <ScalarProperty Name="Ite_Editor" ColumnName="Ite_Editor" />
+                <ScalarProperty Name="Ite_ISBN" ColumnName="Ite_ISBN" />
+                <ScalarProperty Name="Ite_ProdDate" ColumnName="Ite_ProdDate" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Person">
+            <EntityTypeMapping TypeName="SMAUGModel.Person">
+              <MappingFragment StoreEntitySet="Person">
+                <ScalarProperty Name="Per_Id" ColumnName="Per_Id" />
+                <ScalarProperty Name="Per_LastName" ColumnName="Per_LastName" />
+                <ScalarProperty Name="Per_FirstName" ColumnName="Per_FirstName" />
+                <ScalarProperty Name="Per_Birth" ColumnName="Per_Birth" />
+                <ScalarProperty Name="Per_Death" ColumnName="Per_Death" />
+                <ScalarProperty Name="Per_Job" ColumnName="Per_Job" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="Publication">
+            <EntityTypeMapping TypeName="SMAUGModel.Publication">
+              <MappingFragment StoreEntitySet="Publication">
+                <ScalarProperty Name="Pub_Id" ColumnName="Pub_Id" />
+                <ScalarProperty Name="Pub_Title" ColumnName="Pub_Title" />
+                <ScalarProperty Name="Pub_Date" ColumnName="Pub_Date" />
+                <ScalarProperty Name="Pub_SeriesTitle" ColumnName="Pub_SeriesTitle" />
+                <ScalarProperty Name="Pub_Volume" ColumnName="Pub_Volume" />
+                <ScalarProperty Name="Pub_Author" ColumnName="Pub_Author" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="sysdiagrams">
+            <EntityTypeMapping TypeName="SMAUGModel.sysdiagrams">
+              <MappingFragment StoreEntitySet="sysdiagrams">
+                <ScalarProperty Name="name" ColumnName="name" />
+                <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+                <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+                <ScalarProperty Name="version" ColumnName="version" />
+                <ScalarProperty Name="definition" ColumnName="definition" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <AssociationSetMapping Name="Adaptation" TypeName="SMAUGModel.Adaptation" StoreEntitySet="Adaptation">
+            <EndProperty Name="Person">
+              <ScalarProperty Name="Per_Id" ColumnName="Ada_Per_Id" />
+            </EndProperty>
+            <EndProperty Name="Publication">
+              <ScalarProperty Name="Pub_Id" ColumnName="Ada_Pub_Id" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="Development" TypeName="SMAUGModel.Development" StoreEntitySet="Development">
+            <EndProperty Name="Arda">
+              <ScalarProperty Name="Ard_Id" ColumnName="Dev_Ard_Id" />
+            </EndProperty>
+            <EndProperty Name="Publication">
+              <ScalarProperty Name="Pub_Id" ColumnName="Dev_Pub_Id" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="Existence" TypeName="SMAUGModel.Existence" StoreEntitySet="Existence">
+            <EndProperty Name="Arda">
+              <ScalarProperty Name="Ard_Id" ColumnName="Exi_Ard_Id" />
+            </EndProperty>
+            <EndProperty Name="Publication">
+              <ScalarProperty Name="Pub_Id" ColumnName="Exi_Pub_Id" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="Inspiration" TypeName="SMAUGModel.Inspiration" StoreEntitySet="Inspiration">
+            <EndProperty Name="Item">
+              <ScalarProperty Name="Ite_Id" ColumnName="Ins_Ite_Id" />
+            </EndProperty>
+            <EndProperty Name="Publication">
+              <ScalarProperty Name="Pub_Id" ColumnName="Ins_Pub_Id" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="Interpretation" TypeName="SMAUGModel.Interpretation" StoreEntitySet="Interpretation">
+            <EndProperty Name="Arda">
+              <ScalarProperty Name="Ard_Id" ColumnName="Int_Ard_Id" />
+            </EndProperty>
+            <EndProperty Name="Person">
+              <ScalarProperty Name="Per_Id" ColumnName="Int_Per_Id" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="Invention" TypeName="SMAUGModel.Invention" StoreEntitySet="Invention">
+            <EndProperty Name="Arda">
+              <ScalarProperty Name="Ard_Id" ColumnName="Inv_Ard_Id" />
+            </EndProperty>
+            <EndProperty Name="Person">
+              <ScalarProperty Name="Per_Id" ColumnName="Inv_Per_Id" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="Making" TypeName="SMAUGModel.Making" StoreEntitySet="Making">
+            <EndProperty Name="Item">
+              <ScalarProperty Name="Ite_Id" ColumnName="Mak_Ite_Id" />
+            </EndProperty>
+            <EndProperty Name="Person">
+              <ScalarProperty Name="Per_Id" ColumnName="Mak_Per_Id" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="Reference" TypeName="SMAUGModel.Reference" StoreEntitySet="Reference">
+            <EndProperty Name="Arda">
+              <ScalarProperty Name="Ard_Id" ColumnName="Ref_Ard_Id" />
+            </EndProperty>
+            <EndProperty Name="Item">
+              <ScalarProperty Name="Ite_Id" ColumnName="Ref_Ite_Id" />
+            </EndProperty>
+          </AssociationSetMapping>
+          <AssociationSetMapping Name="Subcreation" TypeName="SMAUGModel.Subcreation" StoreEntitySet="Subcreation">
+            <EndProperty Name="Person">
+              <ScalarProperty Name="Per_Id" ColumnName="Sub_Per_Id" />
+            </EndProperty>
+            <EndProperty Name="Publication">
+              <ScalarProperty Name="Pub_Id" ColumnName="Sub_Pub_Id" />
+            </EndProperty>
+          </AssociationSetMapping>
+        </EntityContainerMapping>
+      </Mapping>
+    </edmx:Mappings>
+  </edmx:Runtime>
+  <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <Connection>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="MetadataArtifactProcessing" Value="EmbedInOutputAssembly" />
+      </DesignerInfoPropertySet>
+    </Connection>
+    <Options>
+      <DesignerInfoPropertySet>
+        <DesignerProperty Name="ValidateOnBuild" Value="true" />
+        <DesignerProperty Name="EnablePluralization" Value="false" />
+        <DesignerProperty Name="IncludeForeignKeysInModel" Value="true" />
+        <DesignerProperty Name="UseLegacyProvider" Value="false" />
+        <DesignerProperty Name="CodeGenerationStrategy" Value="Aucun" />
+      </DesignerInfoPropertySet>
+    </Options>
+    <!-- Diagram content (shape and connector positions) -->
+    <Diagrams></Diagrams>
+  </Designer>
+</edmx:Edmx>

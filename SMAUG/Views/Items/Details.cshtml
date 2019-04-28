@@ -1,0 +1,75 @@
+﻿@model SMAUG.Edmx.Item
+
+@{
+    ViewBag.Title = "Details";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Details</h2>
+
+<div>
+    <h4>Item</h4>
+    <hr />
+    <dl class="dl-horizontal">
+        <dt>
+            @Html.DisplayNameFor(model => model.Ite_Type)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ite_Type)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Ite_Name)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ite_Name)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Ite_Collection)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ite_Collection)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Ite_Edition)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ite_Edition)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Ite_Editor)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ite_Editor)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Ite_ISBN)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ite_ISBN)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Ite_ProdDate)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Ite_ProdDate)
+        </dd>
+
+    </dl>
+</div>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id = Model.Ite_Id }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

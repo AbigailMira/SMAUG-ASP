@@ -1,0 +1,58 @@
+﻿@model IEnumerable<SMAUG.Edmx.Person>
+
+@{
+    ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table class="table">
+    <tr>
+        <th>
+            @Html.DisplayNameFor(model => model.Per_LastName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Per_FirstName)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Per_Birth)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Per_Death)
+        </th>
+        <th>
+            @Html.DisplayNameFor(model => model.Per_Job)
+        </th>
+        <th></th>
+    </tr>
+
+@foreach (var item in Model) {
+    <tr>
+        <td>
+            @Html.DisplayFor(modelItem => item.Per_LastName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Per_FirstName)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Per_Birth)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Per_Death)
+        </td>
+        <td>
+            @Html.DisplayFor(modelItem => item.Per_Job)
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id=item.Per_Id }) |
+            @Html.ActionLink("Details", "Details", new { id=item.Per_Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id=item.Per_Id })
+        </td>
+    </tr>
+}
+
+</table>

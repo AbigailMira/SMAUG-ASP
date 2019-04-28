@@ -1,0 +1,14 @@
+﻿body {
+    
+    background-image: url(img/bgr-image.svg);
+    background-size: 100%;
+    background-repeat: no-repeat;
+}
+
+.item-name {
+    font-size: x-large;
+}
+ 
+
+
+
