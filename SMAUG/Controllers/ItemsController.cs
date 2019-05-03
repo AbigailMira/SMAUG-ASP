@@ -6,7 +6,7 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
-using SMAUG.Models;
+using SMAUG.Dto;
 using SMAUG.Models;
 
 namespace SMAUG.Controllers
@@ -15,10 +15,28 @@ namespace SMAUG.Controllers
     {
         private SMAUGEntities db = new SMAUGEntities();
 
-        // GET: Items
         public ActionResult Index()
         {
-            return View(db.Item.ToList());
+            return View();
+        }
+
+        // GET: DtoItems
+        public IQueryable<DtoItem> GetItems()
+        {
+            var items = from i in db.Item
+                        select new DtoItem()
+                        {
+                            Ite_Id = i.Ite_Id,
+                            Ite_Name = i.Ite_Name,
+                            Ite_Type = i.Ite_Type,
+                            Ite_Collection = i.Ite_Collection,
+                            Ite_Edition = i.Ite_Edition,
+                            Ite_Editor = i.Ite_Editor,
+                            Ite_ISBN = i.Ite_ISBN,
+                            Ite_ProdDate = i.Ite_ProdDate
+                        };
+
+            return items;
         }
 
         // GET: Items/Details/5
