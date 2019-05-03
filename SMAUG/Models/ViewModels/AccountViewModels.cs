@@ -1,7 +1,7 @@
 ﻿using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
 
-namespace SMAUG.Edmx
+namespace SMAUG.Models
 {
     public class ExternalLoginConfirmationViewModel
     {

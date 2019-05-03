@@ -25,9 +25,7 @@ namespace SMAUG.Models
         }
     
         public int Ite_Id { get; set; }
-        [DisplayName("Type")]
         public string Ite_Type { get; set; }
-        [DisplayName("Name")]
         public string Ite_Name { get; set; }
         public string Ite_Collection { get; set; }
         public string Ite_Edition { get; set; }
