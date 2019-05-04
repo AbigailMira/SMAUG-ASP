@@ -29,17 +29,25 @@ namespace SMAUG.Controllers
         // GET: DtoPublication
         public IQueryable<DtoPublication> GetPublications()
         {
-            var publications = from p in db.Publication                            
-                        select new DtoPublication()
-                        {
-                            Pub_Id = p.Pub_Id,
-                            Pub_Author = p.Pub_Author,
-                            Pub_Title = p.Pub_Title,
-                            Pub_Type = p.Pub_Type,
-                            Pub_SeriesTitle = p.Pub_SeriesTitle,
-                            Pub_Volume = p.Pub_Volume,
-                            Pub_Date = p.Pub_Date
-                        };
+            var publications = from p in db.Publication
+                               join pe in db.Person
+                               on p.Person.Per_Id equals pe.Per_Id
+
+                               select new DtoPublication()
+                                {
+                                    Pub_Id = p.Pub_Id,                            
+                                    Pub_Title = p.Pub_Title,
+                                    Pub_Type = p.Pub_Type,
+                                    Pub_SeriesTitle = p.Pub_SeriesTitle,
+                                    Pub_Volume = p.Pub_Volume,
+                                    Pub_Date = p.Pub_Date,
+
+                                    Author = new DtoPerson(){
+                                        Per_LastName = pe.Per_LastName,
+                                        Per_FirstName = pe.Per_FirstName}
+
+                                };
+
             return publications;
         }
 

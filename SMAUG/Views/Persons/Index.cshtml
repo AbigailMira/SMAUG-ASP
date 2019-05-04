@@ -15,11 +15,11 @@
 <table class="table">
     <tr>
         <th>
-            LastName
+            Name
         </th>
-        <th>
+        @*<th>
             FirstName
-        </th>
+        </th>*@
         <th>
             Birth
         </th>
@@ -36,11 +36,11 @@
     {
         <tr>
             <td>
-                @Html.DisplayFor(modelItem => person.Per_LastName)
+                @Html.DisplayFor(modelItem => person.FullName)
             </td>
-            <td>
+            @*<td>
                 @Html.DisplayFor(modelItem => person.Per_FirstName)
-            </td>
+            </td>*@
             <td>
                 @Html.DisplayFor(modelItem => person.Per_Birth)
             </td>

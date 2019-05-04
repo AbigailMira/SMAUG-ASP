@@ -14,5 +14,11 @@ namespace SMAUG.Dto
         public Nullable<short> Per_Death { get; set; }
         public string Per_Job { get; set; }
         public string Per_Company { get; set; }
+
+        public string FullName { get { return string.Concat(Per_FirstName + " " + Per_LastName); } }
+
+        public DtoPerson()
+        {
+        }
     }
 }

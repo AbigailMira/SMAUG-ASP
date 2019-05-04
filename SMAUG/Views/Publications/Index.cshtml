@@ -26,9 +26,9 @@
         <th>
             Volume
         </th>
-        @*<th>
-            Last Name
-        </th>*@
+        <th>
+            Author
+        </th>
         <th></th>
     </tr>
 
@@ -46,9 +46,9 @@
         <td>
             @Html.DisplayFor(modelItem => publication.Pub_Volume)
         </td>
-        @*<td>
-            @Html.DisplayFor(modelItem => publication.Person.Per_LastName)
-        </td>*@
+        <td>
+            @Html.DisplayFor(modelItem => publication.Author.FullName)
+        </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id= publication.Pub_Id }) |
             @Html.ActionLink("Details", "Details", new { id= publication.Pub_Id }) |

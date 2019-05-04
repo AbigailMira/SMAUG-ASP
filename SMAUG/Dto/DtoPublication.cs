@@ -15,8 +15,8 @@ namespace SMAUG.Dto
         public Nullable<int> Pub_Author { get; set; }
         public string Pub_Type { get; set; }
 
-        public DtoPerson DtoPerson { get; set; }
-        public DtoItem DtoItem { get; set; }
-        public DtoArda DtoArda { get; set; }
+        public DtoPerson Author { get; set; }
+        public DtoItem Item { get; set; }
+        public DtoArda Arda { get; set; }
     }
 }
