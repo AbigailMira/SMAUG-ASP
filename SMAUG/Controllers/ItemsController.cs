@@ -17,7 +17,7 @@ namespace SMAUG.Controllers
 
         public ActionResult Index()
         {
-            ItemViewModel m = new ItemViewModel();
+            ItemListViewModel m = new ItemListViewModel();
 
             m.Items = GetItems().ToList<DtoItem>();
 

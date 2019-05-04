@@ -8,11 +8,11 @@ using SMAUG.Dto;
 
 namespace SMAUG.Models
 {
-    public class ItemViewModel
+    public class ItemListViewModel
     {
         public List<DtoItem> Items { get; set; }
 
-        public ItemViewModel()
+        public ItemListViewModel()
         {
             Items = new List<DtoItem>();
         }
