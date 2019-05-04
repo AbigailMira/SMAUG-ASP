@@ -6,8 +6,9 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using SMAUG.Dto;
 using SMAUG.Models;
-
+using SMAUG.Models.ViewModels;
 
 namespace SMAUG.Controllers
 {
@@ -15,10 +16,30 @@ namespace SMAUG.Controllers
     {
         private SMAUGEntities db = new SMAUGEntities();
 
-        // GET: Person
         public ActionResult Index()
         {
-            return View(db.Person.ToList());
+            PersonListViewModel m = new PersonListViewModel();
+
+            m.Persons = GetPersons().ToList<DtoPerson>();
+
+            return View(m);
+        }
+
+        // GET: DtoPersons
+        public IQueryable<DtoPerson> GetPersons()
+        {
+            var persons = from p in db.Person
+                          select new DtoPerson()
+                          {
+                              Per_Id = p.Per_Id,
+                              Per_FirstName = p.Per_FirstName,
+                              Per_LastName = p.Per_LastName,
+                              Per_Birth = p.Per_Birth,
+                              Per_Death = p.Per_Death,
+                              Per_Company = p.Per_Company,
+                              Per_Job = p.Per_Job
+                          };
+            return persons;
         }
 
         // GET: Person/Details/5

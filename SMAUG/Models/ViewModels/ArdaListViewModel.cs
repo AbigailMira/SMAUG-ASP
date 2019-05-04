@@ -6,13 +6,13 @@ using System.Web;
 
 namespace SMAUG.Models.ViewModels
 {
-    public class PersonListViewModel
+    public class ArdaListViewModel
     {
-        public List<DtoPerson> Persons { get; set; }
+        public List<DtoArda> Ardas { get; set; }
 
-        public PersonListViewModel()
+        public ArdaListViewModel()
         {
-            Persons = new List<DtoPerson>();
+            Ardas = new List<DtoArda>();
         }
     }
 }

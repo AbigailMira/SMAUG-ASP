@@ -6,7 +6,9 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using SMAUG.Dto;
 using SMAUG.Models;
+using SMAUG.Models.ViewModels;
 
 namespace SMAUG.Controllers
 {
@@ -17,8 +19,28 @@ namespace SMAUG.Controllers
         // GET: Publications
         public ActionResult Index()
         {
-            var publication = db.Publication.Include(p => p.Person);
-            return View(publication.ToList());
+            PublicationListViewModel vm = new PublicationListViewModel();
+
+            vm.Publications = GetPublications().ToList<DtoPublication>();
+
+            return View(vm);
+        }
+
+        // GET: DtoPublication
+        public IQueryable<DtoPublication> GetPublications()
+        {
+            var publications = from p in db.Publication                            
+                        select new DtoPublication()
+                        {
+                            Pub_Id = p.Pub_Id,
+                            Pub_Author = p.Pub_Author,
+                            Pub_Title = p.Pub_Title,
+                            Pub_Type = p.Pub_Type,
+                            Pub_SeriesTitle = p.Pub_SeriesTitle,
+                            Pub_Volume = p.Pub_Volume,
+                            Pub_Date = p.Pub_Date
+                        };
+            return publications;
         }
 
         // GET: Publications/Details/5

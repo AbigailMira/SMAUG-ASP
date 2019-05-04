@@ -1,4 +1,6 @@
-﻿@model IEnumerable<SMAUG.Edmx.Person>
+﻿@using SMAUG.Dto;
+
+@model SMAUG.Models.ViewModels.PersonListViewModel
 
 @{
     ViewBag.Title = "Index";
@@ -13,46 +15,47 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Per_LastName)
+            LastName
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Per_FirstName)
+            FirstName
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Per_Birth)
+            Birth
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Per_Death)
+            Death
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Per_Job)
+            Job
         </th>
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Per_LastName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Per_FirstName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Per_Birth)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Per_Death)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Per_Job)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Per_Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Per_Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Per_Id })
-        </td>
-    </tr>
-}
+    @foreach (DtoPerson person in Model.Persons)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => person.Per_LastName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => person.Per_FirstName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => person.Per_Birth)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => person.Per_Death)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => person.Per_Job)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = person.Per_Id }) |
+                @Html.ActionLink("Details", "Details", new { id = person.Per_Id }) |
+                @Html.ActionLink("Delete", "Delete", new { id = person.Per_Id })
+            </td>
+        </tr>
+    }
 
 </table>

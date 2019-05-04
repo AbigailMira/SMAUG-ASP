@@ -1,4 +1,6 @@
-﻿@model IEnumerable<SMAUG.Models.Arda>
+﻿@using SMAUG.Dto;
+
+@model SMAUG.Models.ViewModels.ArdaListViewModel
 
 @{
     ViewBag.Title = "Index";
@@ -13,46 +15,47 @@
 <table class="table">
     <tr>
         <th>
-            @Html.DisplayNameFor(model => model.Ard_Name)
+            Name
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Ard_Type)
+            Type
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Ard_Race)
+            Race
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Ard_People)
+            People
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Ard_FirstAppearance)
+            First Appearance
         </th>
         <th></th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Ard_Name)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Ard_Type)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Ard_Race)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Ard_People)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Ard_FirstAppearance)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Ard_Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Ard_Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Ard_Id })
-        </td>
-    </tr>
-}
+    @foreach (DtoArda arda in Model.Ardas)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => arda.Ard_Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => arda.Ard_Type)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => arda.Ard_Race)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => arda.Ard_People)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => arda.Ard_FirstAppearance)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = arda.Ard_Id }) |
+                @Html.ActionLink("Details", "Details", new { id = arda.Ard_Id }) |
+                @Html.ActionLink("Delete", "Delete", new { id = arda.Ard_Id })
+            </td>
+        </tr>
+    }
 
 </table>

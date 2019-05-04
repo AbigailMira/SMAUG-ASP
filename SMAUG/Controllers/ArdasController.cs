@@ -6,8 +6,9 @@ using System.Linq;
 using System.Net;
 using System.Web;
 using System.Web.Mvc;
+using SMAUG.Dto;
 using SMAUG.Models;
-
+using SMAUG.Models.ViewModels;
 
 namespace SMAUG.Controllers
 {
@@ -18,9 +19,29 @@ namespace SMAUG.Controllers
         // GET: Arda
         public ActionResult Index()
         {
-            return View(db.Arda.ToList());
-        }
+            ArdaListViewModel vm = new ArdaListViewModel();
 
+            vm.Ardas = GetArdas().ToList<DtoArda>();
+
+            return View(vm);
+        }
+        
+        // GET: DtoArda
+        public IQueryable<DtoArda> GetArdas()
+        {
+            var ardas = from a in db.Arda
+                          select new DtoArda()
+                          {
+                              Ard_Id = a.Ard_Id,
+                              Ard_Type = a.Ard_Type,
+                              Ard_Name = a.Ard_Name,
+                              Ard_Race = a.Ard_Race,
+                              Ard_People = a.Ard_People,
+                              Ard_Gender = a.Ard_Gender,
+                              Ard_FirstAppearance = a.Ard_FirstAppearance
+                          };
+            return ardas;
+        }
         // GET: Arda/Details/5
         public ActionResult Details(int? id)
         {
