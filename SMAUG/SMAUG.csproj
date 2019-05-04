@@ -370,7 +370,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Edmx\" />
     <Folder Include="Views\Default\" />
   </ItemGroup>
   <ItemGroup>
