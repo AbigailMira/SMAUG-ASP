@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="SMAUGModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="SMAUGModel.Store" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="Adaptation">
           <Key>
             <PropertyRef Name="Ada_Per_Id" />
@@ -304,18 +304,6 @@
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="FK_Publication_Person">
-          <End Role="Person" Type="Self.Person" Multiplicity="0..1" />
-          <End Role="Publication" Type="Self.Publication" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Person">
-              <PropertyRef Name="Per_Id" />
-            </Principal>
-            <Dependent Role="Publication">
-              <PropertyRef Name="Pub_Author" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
         <Association Name="FK_Reference_Arda">
           <End Role="Arda" Type="Self.Arda" Multiplicity="1" />
           <End Role="Reference" Type="Self.Reference" Multiplicity="*" />
@@ -435,10 +423,6 @@
             <End Role="Person" EntitySet="Person" />
             <End Role="Making" EntitySet="Making" />
           </AssociationSet>
-          <AssociationSet Name="FK_Publication_Person" Association="Self.FK_Publication_Person">
-            <End Role="Person" EntitySet="Person" />
-            <End Role="Publication" EntitySet="Publication" />
-          </AssociationSet>
           <AssociationSet Name="FK_Reference_Arda" Association="Self.FK_Reference_Arda">
             <End Role="Arda" EntitySet="Arda" />
             <End Role="Reference" EntitySet="Reference" />
@@ -456,8 +440,7 @@
             <End Role="Subcreation" EntitySet="Subcreation" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="SMAUGModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">

@@ -32,6 +32,8 @@ namespace SMAUG.Controllers
             var publications = from p in db.Publication
                                join pe in db.Person
                                on p.Person.Per_Id equals pe.Per_Id
+                               join i in db.Item
+                               on p.Item.
 
                                select new DtoPublication()
                                 {
@@ -42,9 +44,16 @@ namespace SMAUG.Controllers
                                     Pub_Volume = p.Pub_Volume,
                                     Pub_Date = p.Pub_Date,
 
-                                    Author = new DtoPerson(){
+                                    Author = new DtoPerson()
+                                    {
                                         Per_LastName = pe.Per_LastName,
-                                        Per_FirstName = pe.Per_FirstName}
+                                        Per_FirstName = pe.Per_FirstName
+                                    }
+
+                                    Item = new DtoItem()
+                                    {
+                                        Ite_Name = 
+                                    }
 
                                 };
 

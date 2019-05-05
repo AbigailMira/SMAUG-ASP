@@ -19,7 +19,10 @@
         <AssociationConnector Association="SMAUGModel.Invention" ManuallyRouted="false" />
         <AssociationConnector Association="SMAUGModel.Making" ManuallyRouted="false" />
         <AssociationConnector Association="SMAUGModel.Reference" ManuallyRouted="false" />
-        <AssociationConnector Association="SMAUGModel.Subcreation" ManuallyRouted="false" />
+        <AssociationConnector Association="SMAUGModel.Subcreation" ManuallyRouted="true" >
+          <ConnectorPoint PointX="6.75" PointY="7.7688452148437488" />
+          <ConnectorPoint PointX="7.5" PointY="7.7688452148437488" />
+        </AssociationConnector>
       </Diagram>
     </edmx:Diagrams>
   </edmx:Designer>
