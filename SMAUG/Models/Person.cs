@@ -17,9 +17,11 @@ namespace SMAUG.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Person()
         {
-            this.Publication = new HashSet<Publication>();
-            this.Arda = new HashSet<Arda>();
-            this.Item = new HashSet<Item>();
+            this.Interpreted = new HashSet<Arda>();
+            this.Made = new HashSet<Item>();
+            this.Subcreated = new HashSet<Publication>();
+            this.Adapted = new HashSet<Publication>();
+            this.Invented = new HashSet<Arda>();
         }
     
         public int Per_Id { get; set; }
@@ -31,10 +33,14 @@ namespace SMAUG.Models
         public string Per_Company { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Publication> Publication { get; set; }
+        public virtual ICollection<Arda> Interpreted { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Arda> Arda { get; set; }
+        public virtual ICollection<Item> Made { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Item> Item { get; set; }
+        public virtual ICollection<Publication> Subcreated { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Publication> Adapted { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Arda> Invented { get; set; }
     }
 }

@@ -17,8 +17,11 @@ namespace SMAUG.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Publication()
         {
-            this.Arda = new HashSet<Arda>();
-            this.Item = new HashSet<Item>();
+            this.Developed = new HashSet<Arda>();
+            this.Inspired = new HashSet<Item>();
+            this.Subcreator = new HashSet<Person>();
+            this.Adaptor = new HashSet<Person>();
+            this.BroughtForth = new HashSet<Arda>();
         }
     
         public int Pub_Id { get; set; }
@@ -29,10 +32,15 @@ namespace SMAUG.Models
         public Nullable<int> Pub_Author { get; set; }
         public string Pub_Type { get; set; }
     
-        public virtual Person Person { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Arda> Arda { get; set; }
+        public virtual ICollection<Arda> Developed { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Item> Item { get; set; }
+        public virtual ICollection<Item> Inspired { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Person> Subcreator { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Person> Adaptor { get; set; }
+        [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
+        public virtual ICollection<Arda> BroughtForth { get; set; }
     }
 }

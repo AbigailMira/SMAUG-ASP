@@ -17,9 +17,9 @@ namespace SMAUG.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public Item()
         {
-            this.Publication = new HashSet<Publication>();
-            this.Person = new HashSet<Person>();
-            this.Arda = new HashSet<Arda>();
+            this.Inspires = new HashSet<Publication>();
+            this.Maker = new HashSet<Person>();
+            this.ReferedTo = new HashSet<Arda>();
         }
     
         public int Ite_Id { get; set; }
@@ -32,10 +32,10 @@ namespace SMAUG.Models
         public Nullable<short> Ite_ProdDate { get; set; }
     
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Publication> Publication { get; set; }
+        public virtual ICollection<Publication> Inspires { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Person> Person { get; set; }
+        public virtual ICollection<Person> Maker { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Arda> Arda { get; set; }
+        public virtual ICollection<Arda> ReferedTo { get; set; }
     }
 }
