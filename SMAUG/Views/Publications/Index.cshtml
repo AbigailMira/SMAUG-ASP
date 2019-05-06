@@ -21,13 +21,19 @@
             Date
         </th>
         <th>
+            Type
+        </th>
+        <th>
             Series Title
         </th>
         <th>
             Volume
         </th>
         <th>
-            Author
+            Subcreated by
+        </th>
+        <th>
+            Adapted by
         </th>
         <th></th>
     </tr>
@@ -41,18 +47,34 @@
             @Html.DisplayFor(modelItem => publication.Pub_Date)
         </td>
         <td>
+            @Html.DisplayFor(modelItem => publication.Pub_Type)
+        </td>
+        <td>
             @Html.DisplayFor(modelItem => publication.Pub_SeriesTitle)
         </td>
         <td>
             @Html.DisplayFor(modelItem => publication.Pub_Volume)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => publication.Author.FullName)
+            @foreach (DtoPerson subcreator in publication.Subcreators)
+            {
+
+                @Html.DisplayFor(modelItem => subcreator.FullName)
+
+            }
         </td>
         <td>
-            @Html.ActionLink("Edit", "Edit", new { id= publication.Pub_Id }) |
-            @Html.ActionLink("Details", "Details", new { id= publication.Pub_Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id= publication.Pub_Id })
+            @foreach (DtoPerson adaptor in publication.Adaptors)
+            {
+
+                @Html.DisplayFor(modelItem => adaptor.FullName)
+
+            }
+        </td>
+        <td>
+            @Html.ActionLink("Edit", "Edit", new { id = publication.Pub_Id }) |
+            @Html.ActionLink("Details", "Details", new { id = publication.Pub_Id }) |
+            @Html.ActionLink("Delete", "Delete", new { id = publication.Pub_Id })
         </td>
     </tr>
 }
