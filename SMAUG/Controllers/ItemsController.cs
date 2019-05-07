@@ -15,6 +15,7 @@ namespace SMAUG.Controllers
     {
         private SMAUGEntities db = new SMAUGEntities();
 
+        // GET: Item List
         public ActionResult Index()
         {
             ItemListViewModel m = new ItemListViewModel();
