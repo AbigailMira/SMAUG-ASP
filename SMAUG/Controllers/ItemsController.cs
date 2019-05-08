@@ -18,11 +18,11 @@ namespace SMAUG.Controllers
         // GET: Item List
         public ActionResult Index()
         {
-            ItemListViewModel m = new ItemListViewModel();
+            ItemListViewModel vm = new ItemListViewModel();
 
-            m.Items = GetItems().ToList<DtoItem>();
+            vm.Items = GetItems().ToList<DtoItem>();
 
-            return View(m);
+            return View(vm);
         }
 
         // GET: DtoItems

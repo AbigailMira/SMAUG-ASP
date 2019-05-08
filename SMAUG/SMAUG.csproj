@@ -231,6 +231,8 @@
     <Compile Include="Models\ViewModels\AccountViewModels.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ViewModels\ArdaListViewModel.cs" />
+    <Compile Include="Models\ViewModels\ItemCreateViewModel.cs" />
+    <Compile Include="Models\ViewModels\ItemDetailViewModel.cs" />
     <Compile Include="Models\ViewModels\ItemListViewModel.cs" />
     <Compile Include="Models\ViewModels\ManageViewModels.cs" />
     <Compile Include="Models\ViewModels\PersonListViewModel.cs" />
