@@ -9,7 +9,7 @@ namespace SMAUG.Migrations
     {
         public Configuration()
         {
-            AutomaticMigrationsEnabled = false;
+            AutomaticMigrationsEnabled = true;
         }
 
         protected override void Seed(SMAUG.Models.ApplicationDbContext context)
