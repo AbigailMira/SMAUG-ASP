@@ -195,6 +195,7 @@
     <Compile Include="Dto\DtoItem.cs" />
     <Compile Include="Dto\DtoPerson.cs" />
     <Compile Include="Dto\DtoPublication.cs" />
+    <Compile Include="Migrations\Configuration.cs" />
     <Compile Include="Models\Arda.cs">
       <DependentUpon>SMAUGModel.tt</DependentUpon>
     </Compile>
