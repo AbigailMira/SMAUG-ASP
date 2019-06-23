@@ -1,4 +1,7 @@
-﻿@model SMAUG.Models.Item
+﻿@model SMAUG.Models.ItemDetailViewModel
+@using SMAUG.Models
+@using SMAUG.Dto
+
 @{
     ViewBag.Title = "Details";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -24,17 +27,20 @@
         <div class="col text-center" name="item-data-center">
             <div>J.R.R. Tolkien   </div>
             <div class="m-5 p-5">
-                
-                @Html.DisplayFor(model => model.Maker)
+                @foreach (DtoPerson p in Model.item.Makers)
+                    {
+                    @Html.DisplayFor(modelItem => p.FullName)
+                }
+
             </div>
             <div class="m-5 p-5 item-name">
-                @Html.DisplayFor(model => model.Ite_Name)
+                @Html.DisplayFor(model => model.item.Ite_Name)
             </div>
             <div class="m-5 p-3">
-                @Html.DisplayFor(model => model.Ite_ProdDate)
+                @Html.DisplayFor(model => model.item.Ite_ProdDate)
             </div>
             <div class="m-5 p-2">
-                @Html.DisplayFor(model => model.Ite_Type)
+                @Html.DisplayFor(model => model.item.Ite_Type)
             </div>
         </div>
         <div class="col text-center" name="item-data-left">

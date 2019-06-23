@@ -17,5 +17,8 @@ namespace SMAUG.Dto
         public string Ite_Editor { get; set; }        
         public string Ite_ISBN { get; set; }        
         public Nullable<short> Ite_ProdDate { get; set; }
+
+        public ICollection<DtoPerson> Makers { get; set; }
+
     }
 }

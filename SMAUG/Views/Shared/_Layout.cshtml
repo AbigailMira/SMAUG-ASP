@@ -24,13 +24,16 @@
         <div class="collapse navbar-collapse" id="collapsibleNavbar">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
+                    @Html.ActionLink("Person List", "Index", "Persons")
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
+                    @Html.ActionLink("Arda List", "Index", "Ardas")
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#">Link</a>
+                    @Html.ActionLink("Publication List", "Index", "Publications")
+                </li>
+                <li class="nav-item">
+                    @Html.ActionLink("Item List", "Index", "Items")
                 </li>
             </ul>
         </div>

@@ -39,7 +39,13 @@ namespace SMAUG.Controllers
                             Ite_Edition = i.Ite_Edition,
                             Ite_Editor = i.Ite_Editor,
                             Ite_ISBN = i.Ite_ISBN,
-                            Ite_ProdDate = i.Ite_ProdDate
+                            Ite_ProdDate = i.Ite_ProdDate,
+                            Makers = (from m in i.Maker
+                                      select new DtoPerson()
+                                      {
+                                          Per_FirstName = m.Per_FirstName,
+                                          Per_LastName = m.Per_LastName
+                                      }).ToList()
                         };
 
             return items;
@@ -53,13 +59,35 @@ namespace SMAUG.Controllers
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
 
-            Item item = db.Item.Find(id);
+            ItemDetailViewModel vm = new ItemDetailViewModel();
+
+            DtoItem item = (from i in db.Item
+                         where i.Ite_Id == id
+                        select new DtoItem()
+                        {
+                            Ite_Id = i.Ite_Id,
+                            Ite_Name = i.Ite_Name,
+                            Ite_Type = i.Ite_Type,
+                            Ite_Collection = i.Ite_Collection,
+                            Ite_Edition = i.Ite_Edition,
+                            Ite_Editor = i.Ite_Editor,
+                            Ite_ISBN = i.Ite_ISBN,
+                            Ite_ProdDate = i.Ite_ProdDate,
+                            Makers = (from m in i.Maker
+                                      select new DtoPerson()
+                                      {
+                                          Per_FirstName = m.Per_FirstName,
+                                          Per_LastName = m.Per_LastName
+                                      }).ToList()
+                        }).Single();
 
             if (item == null)
             {
                 return HttpNotFound();
             }
-            return View(item);
+            vm.item = item;
+
+            return View(vm);
         }
 
         // GET: Items/Create
