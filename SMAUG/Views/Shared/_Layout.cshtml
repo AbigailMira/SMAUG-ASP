@@ -7,6 +7,11 @@
     <title>@ViewBag.Title - Mon application ASP.NET</title>
     @Styles.Render("~/Content/css")
     @Scripts.Render("~/bundles/modernizr")
+    
+    @if (IsSectionDefined("ItemBg"))
+    {
+        @RenderSection("ItemBg")
+    }
 
 </head>
 <body>
@@ -32,11 +37,7 @@
     </nav>
 
     <div class="container body-content">
-        @RenderBody()
-        <hr />
-        <footer>
-            <p>&copy; @DateTime.Now.Year - Show Me All U Got</p>
-        </footer>
+        @RenderBody()        
     </div>
 
     @Scripts.Render("~/bundles/jquery")

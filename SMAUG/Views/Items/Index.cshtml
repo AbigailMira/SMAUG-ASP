@@ -7,6 +7,8 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
+
+
 <h2>Index</h2>
 
 <p>
@@ -38,36 +40,36 @@
         <th></th>
     </tr>
     @foreach (DtoItem item in Model.Items)
-        
-        {
-            <tr>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Ite_Type)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Ite_Name)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Ite_Collection)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Ite_Edition)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Ite_Editor)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Ite_ISBN)
-                </td>
-                <td>
-                    @Html.DisplayFor(modelItem => item.Ite_ProdDate)
-                </td>
-                <td>
-                    @Html.ActionLink("Edit", "Edit", new { id = item.Ite_Id }) |
-                    @Html.ActionLink("Details", "Details", new { id = item.Ite_Id }) |
-                    @Html.ActionLink("Delete", "Delete", new { id = item.Ite_Id })
-                </td>
-            </tr>
-        }
+
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ite_Type)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ite_Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ite_Collection)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ite_Edition)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ite_Editor)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ite_ISBN)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Ite_ProdDate)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.Ite_Id }) |
+                @Html.ActionLink("Details", "Details", new { id = item.Ite_Id }) |
+                @Html.ActionLink("Delete", "Delete", new { id = item.Ite_Id })
+            </td>
+        </tr>
+    }
 
 </table>

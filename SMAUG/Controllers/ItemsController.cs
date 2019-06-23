@@ -8,6 +8,7 @@ using System.Web;
 using System.Web.Mvc;
 using SMAUG.Dto;
 using SMAUG.Models;
+using SMAUG.Models.ViewModels;
 
 namespace SMAUG.Controllers
 {
@@ -51,12 +52,16 @@ namespace SMAUG.Controllers
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
+
             Item item = db.Item.Find(id);
+
+            ItemDetailViewModel vm = new ItemDetailViewModel();
+
             if (item == null)
             {
                 return HttpNotFound();
             }
-            return View(item);
+            return View(vm);
         }
 
         // GET: Items/Create
