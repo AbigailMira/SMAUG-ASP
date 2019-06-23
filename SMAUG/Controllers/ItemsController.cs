@@ -55,13 +55,11 @@ namespace SMAUG.Controllers
 
             Item item = db.Item.Find(id);
 
-            ItemDetailViewModel vm = new ItemDetailViewModel();
-
             if (item == null)
             {
                 return HttpNotFound();
             }
-            return View(vm);
+            return View(item);
         }
 
         // GET: Items/Create

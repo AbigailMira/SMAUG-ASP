@@ -234,7 +234,6 @@
     <Compile Include="Models\ViewModels\ArdaListViewModel.cs" />
     <Compile Include="Models\ViewModels\ItemCreateViewModel.cs" />
     <Compile Include="Models\ViewModels\ItemListViewModel.cs" />
-    <Compile Include="Models\ViewModels\ItemDetailViewModel.cs" />
     <Compile Include="Models\ViewModels\ManageViewModels.cs" />
     <Compile Include="Models\ViewModels\PersonListViewModel.cs" />
     <Compile Include="Models\ViewModels\PublicationListViewModel.cs" />
@@ -357,7 +356,6 @@
     <Content Include="Scripts\popper.js.map" />
     <Content Include="Scripts\popper-utils.min.js.map" />
     <Content Include="Scripts\popper-utils.js.map" />
-    <Content Include="Views\ItemView\ItemView.cshtml" />
     <Content Include="Views\Items\Create.cshtml" />
     <Content Include="Views\Items\Delete.cshtml" />
     <Content Include="Views\Items\Details.cshtml" />

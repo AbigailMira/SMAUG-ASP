@@ -1,5 +1,4 @@
-﻿@model SMAUG.Models.ViewModels.ItemDetailViewModel
-
+﻿@model SMAUG.Models.Item
 @{
     ViewBag.Title = "Details";
     Layout = "~/Views/Shared/_Layout.cshtml";
@@ -24,10 +23,19 @@
         </div>
         <div class="col text-center" name="item-data-center">
             <div>J.R.R. Tolkien   </div>
-            <div class="m-5 p-5">Maker</div>
-            <div class="m-5 p-5 item-name">Item name</div>
-            <div class="m-5 p-3">Year</div>
-            <div class="m-5 p-2">Item type</div>
+            <div class="m-5 p-5">
+                
+                @Html.DisplayFor(model => model.Maker)
+            </div>
+            <div class="m-5 p-5 item-name">
+                @Html.DisplayFor(model => model.Ite_Name)
+            </div>
+            <div class="m-5 p-3">
+                @Html.DisplayFor(model => model.Ite_ProdDate)
+            </div>
+            <div class="m-5 p-2">
+                @Html.DisplayFor(model => model.Ite_Type)
+            </div>
         </div>
         <div class="col text-center" name="item-data-left">
             <div>
