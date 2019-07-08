@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SMAUG.Models;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
@@ -18,7 +19,13 @@ namespace SMAUG.Dto
         public ICollection<DtoPerson> Subcreators { get; set; }
         public ICollection<DtoPerson> Adaptors { get; set; }
         public ICollection<DtoItem> Inspireds { get; set; }
-        public ICollection<DtoArda> BroughtForths { get; set; }
+        public ICollection<DtoArda> Introduceds { get; set; }
         public ICollection<DtoArda> Adapteds { get; set; }
+
+        public DtoPublication()
+        {
+        }
     }
+
+    
 }

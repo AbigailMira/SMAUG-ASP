@@ -459,7 +459,7 @@
           <NavigationProperty Name="Interpretor" Relationship="Self.Interpretation" FromRole="Arda" ToRole="Person" />
           <NavigationProperty Name="RefersTo" Relationship="Self.Reference" FromRole="Arda" ToRole="Item" />
           <NavigationProperty Name="Inventor" Relationship="SMAUGModel.Invention" FromRole="Arda" ToRole="Person" />
-          <NavigationProperty Name="BringsForth" Relationship="SMAUGModel.Existence" FromRole="Arda" ToRole="Publication" />
+          <NavigationProperty Name="Introduces" Relationship="SMAUGModel.Existence" FromRole="Arda" ToRole="Publication" />
         </EntityType>
         <EntityType Name="Item">
           <Key>
@@ -509,7 +509,7 @@
           <NavigationProperty Name="Inspired" Relationship="Self.Inspiration" FromRole="Publication" ToRole="Item" />
           <NavigationProperty Name="Subcreator" Relationship="SMAUGModel.Subcreation" FromRole="Publication" ToRole="Person" />
           <NavigationProperty Name="Adaptor" Relationship="SMAUGModel.Adaptation" FromRole="Publication" ToRole="Person" />
-          <NavigationProperty Name="BroughtForth" Relationship="SMAUGModel.Existence" FromRole="Publication" ToRole="Arda" />
+          <NavigationProperty Name="Introduced" Relationship="SMAUGModel.Existence" FromRole="Publication" ToRole="Arda" />
         </EntityType>
         <EntityType Name="sysdiagrams">
           <Key>

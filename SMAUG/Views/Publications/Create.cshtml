@@ -1,4 +1,4 @@
-﻿@model SMAUG.Models.Publication
+﻿@model SMAUG.Models.ViewModels.PublicationViewModels.PublicationCreateViewModel
 
 @{
     ViewBag.Title = "Create";
@@ -48,10 +48,10 @@
         </div>
 
         <div class="form-group">
-            @Html.LabelFor(model => model.Pub_Author, "Pub_Author", htmlAttributes: new { @class = "control-label col-md-2" })
+            @Html.LabelFor(model => model.Introduced, "Introduceds", htmlAttributes: new { @class = "control-label col-md-2" })
             <div class="col-md-10">
-                @Html.DropDownList("Pub_Author", null, htmlAttributes: new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.Pub_Author, "", new { @class = "text-danger" })
+                @Html.DropDownList("Introduced", null, htmlAttributes: new { @class = "form-control" })
+                @Html.ValidationMessageFor(model => model.Introduceds, "", new { @class = "text-danger" })
             </div>
         </div>
 

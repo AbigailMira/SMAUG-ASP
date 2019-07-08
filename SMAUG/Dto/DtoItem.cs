@@ -20,5 +20,8 @@ namespace SMAUG.Dto
 
         public ICollection<DtoPerson> Makers { get; set; }
 
+        public DtoItem()
+        {
+        }
     }
 }

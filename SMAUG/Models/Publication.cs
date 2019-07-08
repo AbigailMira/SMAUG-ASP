@@ -21,7 +21,7 @@ namespace SMAUG.Models
             this.Inspired = new HashSet<Item>();
             this.Subcreator = new HashSet<Person>();
             this.Adaptor = new HashSet<Person>();
-            this.BroughtForth = new HashSet<Arda>();
+            this.Introduced = new HashSet<Arda>();
         }
     
         public int Pub_Id { get; set; }
@@ -41,6 +41,6 @@ namespace SMAUG.Models
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<Person> Adaptor { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<Arda> BroughtForth { get; set; }
+        public virtual ICollection<Arda> Introduced { get; set; }
     }
 }

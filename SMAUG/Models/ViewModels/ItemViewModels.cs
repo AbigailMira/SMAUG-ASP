@@ -18,6 +18,11 @@ namespace SMAUG.Models
         }
     }
 
+    public class ItemDetailViewModel
+    {
+        public DtoItem item;
+    }
+
     public class ItemCreateViewModel
     {
         [Display(Name = "Item Type")]
@@ -43,8 +48,4 @@ namespace SMAUG.Models
         public virtual ICollection<Arda> ReferedTo { get; set; }
     }
 
-    public class ItemDetailViewModel
-    {
-        public DtoItem item;
-    }
 }

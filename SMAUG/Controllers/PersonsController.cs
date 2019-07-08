@@ -8,7 +8,7 @@ using System.Web;
 using System.Web.Mvc;
 using SMAUG.Dto;
 using SMAUG.Models;
-using SMAUG.Models.ViewModels;
+using static SMAUG.Models.ViewModels.PersonViewModels;
 
 namespace SMAUG.Controllers
 {

@@ -11,10 +11,10 @@
         <EntityTypeShape EntityType="SMAUGModel.Publication" Width="1.875" PointX="1.5" PointY="5.625" IsExpanded="true" />
         <EntityTypeShape EntityType="SMAUGModel.sysdiagrams" Width="1.5" PointX="0.75" PointY="0.75" IsExpanded="true" />
         <AssociationConnector Association="SMAUGModel.Development" ManuallyRouted="true" >
-          <ConnectorPoint PointX="12.89430969298726" PointY="8.9513964843750014" />
-          <ConnectorPoint PointX="12.89430969298726" PointY="12.106223756851492" />
-          <ConnectorPoint PointX="2.3129344056741745" PointY="12.106223756851492" />
-          <ConnectorPoint PointX="2.3129344056741745" PointY="8.9513964843750014" />
+          <ConnectorPoint PointX="12.89430969298726" PointY="8.951396484375" />
+          <ConnectorPoint PointX="12.89430969298726" PointY="11.857696985589925" />
+          <ConnectorPoint PointX="2.3129344056741745" PointY="11.857696985589925" />
+          <ConnectorPoint PointX="2.3129344056741745" PointY="8.951396484375" />
         </AssociationConnector>
         <AssociationConnector Association="SMAUGModel.Inspiration" ManuallyRouted="true" >
           <ConnectorPoint PointX="6.75" PointY="9.0205113723589712" />
@@ -34,10 +34,10 @@
         <AssociationConnector Association="SMAUGModel.Adaptation" />
         <AssociationConnector Association="SMAUGModel.Invention" />
         <AssociationConnector Association="SMAUGModel.Existence" ManuallyRouted="true" >
-          <ConnectorPoint PointX="12.495006700297306" PointY="8.9513964843750014" />
-          <ConnectorPoint PointX="12.495006700297306" PointY="11.528324162012453" />
-          <ConnectorPoint PointX="2.7935168972677777" PointY="11.528324162012453" />
-          <ConnectorPoint PointX="2.7935168972677777" PointY="8.9513964843750014" />
+          <ConnectorPoint PointX="12.495006700297306" PointY="8.951396484375" />
+          <ConnectorPoint PointX="12.495006700297306" PointY="11.290332667784394" />
+          <ConnectorPoint PointX="2.7935168972677777" PointY="11.290332667784394" />
+          <ConnectorPoint PointX="2.7935168972677777" PointY="8.951396484375" />
         </AssociationConnector>
       </Diagram>
     </edmx:Diagrams>
